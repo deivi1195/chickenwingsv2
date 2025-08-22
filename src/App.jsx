@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 function App() {
-  const [cart, setCart] = useState([])
   const [activeCategory, setActiveCategory] = useState('Entradas')
-  const [isCartOpen, setIsCartOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [showSauceModal, setShowSauceModal] = useState(false)
   const [selectedItem, setSelectedItem] = useState(null)
   const [selectedSauces, setSelectedSauces] = useState([])
@@ -17,6 +14,9 @@ function App() {
     direccion: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [cart, setCart] = useState([])
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [showAlert, setShowAlert] = useState(false)
   const [alertMessage, setAlertMessage] = useState('')
   const [alertType, setAlertType] = useState('success') // 'success', 'error', 'warning'
@@ -159,7 +159,7 @@ function App() {
       }
 
       // Enviar a n8n webhook
-      const response = await fetch('https://chickenwingsv1-n8n.dnbu5s.easypanel.host/webhook-test/chicken-wings-orders', {
+      const response = await fetch('https://chickenwingsv1-n8n.dnbu5s.easypanel.host/webhook/chicken-wings-orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
