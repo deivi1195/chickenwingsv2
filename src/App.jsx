@@ -970,7 +970,7 @@ function App() {
       )}
 
       {/* Floating Cart Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className={`fixed bottom-6 right-6 ${showOrderForm ? 'z-40' : 'z-50'}`}>
         {/* Cart Button */}
         <button
           onClick={() => setIsCartOpen(!isCartOpen)}
@@ -984,7 +984,7 @@ function App() {
 
             {/* Badge with item count */}
             {cart.length > 0 && (
-              <div className="absolute -top-3 -right-3 bg-gradient-to-br from-yellow-400 to-orange-400 text-red-700 text-xs font-black rounded-full w-7 h-7 flex items-center justify-center animate-pulse shadow-lg border-2 border-white">
+              <div className="absolute -top-7 -right-5 bg-gradient-to-br from-yellow-400 to-orange-400 text-red-700 text-xs font-black rounded-full w-7 h-7 flex items-center justify-center shadow-lg border-2 border-white">
                 <span className="text-xs font-extrabold">
                   {cart.length > 99 ? '99+' : cart.length}
                 </span>
