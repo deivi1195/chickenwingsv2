@@ -773,9 +773,9 @@ function App() {
 
       {/* Order Form Modal */}
       {showOrderForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-2xl max-w-md w-full">
-            <div className="bg-green-500 text-white px-6 py-4 rounded-t-lg">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+        <div className="bg-white rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+          <div className="bg-green-500 text-white px-4 py-3 rounded-t-lg sticky top-0 z-10">
               <div className="flex justify-between items-center">
                 <h3 className="text-2xl font-bold">DATOS DEL PEDIDO</h3>
                 <button
