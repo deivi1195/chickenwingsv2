@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans;
+  }
+}
+
+@layer components {
+  .bg-chicken-wings {
+    background-image: url('/chicken-wings-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  /* Responsive background adjustments */
+  @media (max-width: 768px) {
+    .bg-chicken-wings {
+      background-size: cover;
+      background-position: center top;
+      background-attachment: scroll; /* Better performance on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bg-chicken-wings {
+      background-size: 150% auto; /* Zoom in slightly on very small screens */
+      background-position: center top;
+    }
+  }
+  
+  /* Custom animations */
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      transform: translate3d(0,-15px,0);
+    }
+    70% {
+      transform: translate3d(0,-7px,0);
+    }
+    90% {
+      transform: translate3d(0,-2px,0);
+    }
+  }
+}
