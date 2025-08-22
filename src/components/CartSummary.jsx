@@ -53,7 +53,7 @@ const CartSummary = () => {
   }
 
   return (
-    <div className="fixed top-16 md:top-20 right-0 md:right-4 w-full md:w-96 bg-black border-4 border-red-600 p-3 md:p-4 shadow-xl z-50 max-h-[90vh] overflow-y-auto">
+    <div className="fixed top-16 md:top-20 right-0 md:right-4 w-full md:w-96 bg-black border-4 border-red-600 p-3 md:p-4 shadow-xl z-50 max-h-[70vh] overflow-y-auto">
       <div className="bg-red-600 text-white px-3 md:px-4 py-2 font-bold text-base md:text-lg mb-3 md:mb-4 text-center transform -skew-x-12">
         TU PEDIDO
       </div>
