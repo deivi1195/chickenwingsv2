@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function App() {
   const [cart, setCart] = useState([])
@@ -20,6 +20,20 @@ function App() {
   const [showAlert, setShowAlert] = useState(false)
   const [alertMessage, setAlertMessage] = useState('')
   const [alertType, setAlertType] = useState('success') // 'success', 'error', 'warning'
+
+  // Add this useEffect to handle scroll lock
+  useEffect(() => {
+    if (showOrderForm) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showOrderForm]);
 
   const sauces = {
     sinPicante: ['BBQ', '3 Quesos', 'Teriyaki', 'Mostaza Miel', 'Salsa Agridulce', 'Jack Daniel\'s', 'Salsa Ranch', 'Honey Garlic'],

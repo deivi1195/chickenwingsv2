@@ -53,8 +53,8 @@ const CartSummary = () => {
   }
 
   return (
-    <div className="fixed top-16 md:top-20 right-0 md:right-4 w-full md:w-96 bg-black border-4 border-red-600 p-3 md:p-4 shadow-xl z-50 max-h-[70vh] overflow-y-auto">
-      <div className="bg-red-600 text-white px-3 md:px-4 py-2 font-bold text-base md:text-lg mb-3 md:mb-4 text-center transform -skew-x-12">
+    <div className="fixed top-16 md:top-20 right-0 md:right-4 w-full md:w-96 bg-black border-4 border-red-600 p-3 md:p-4 shadow-xl z-50 max-h-[60vh] overflow-y-auto">
+      <div className="bg-red-600 text-white px-3 md:px-4 py-1.5 font-bold text-sm md:text-base mb-2 md:mb-3 text-center transform -skew-x-12">
         TU PEDIDO
       </div>
 
@@ -62,85 +62,85 @@ const CartSummary = () => {
         <div className="relative">
           <button 
             onClick={() => setShowCheckoutForm(false)}
-            className="absolute -top-1 -right-1 md:-top-2 md:-right-2 text-gray-400 hover:text-white bg-black rounded-full p-1"
+            className="absolute -top-1 -right-1 text-gray-400 hover:text-white bg-black rounded-full p-0.5"
           >
-            <X className="h-4 w-4 md:h-5 md:w-5" />
+            <X className="h-3 w-3 md:h-4 md:w-4" />
           </button>
           
-          <form onSubmit={handleSubmitOrder} className="space-y-3 md:space-y-4 pr-1">
+          <form onSubmit={handleSubmitOrder} className="space-y-2 md:space-y-3 pr-1">
             <div>
-              <label className="block text-xs md:text-sm font-medium text-white mb-1 flex items-center">
-                <User className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" /> 
-                <span className="text-xs md:text-sm">Nombre Completo *</span>
+              <label className="block text-xs font-medium text-white mb-0.5 flex items-center">
+                <User className="h-3 w-3 mr-1" /> 
+                <span>Nombre *</span>
               </label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-2 md:px-3 py-1.5 md:py-2 bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded focus:outline-none focus:ring-1 md:focus:ring-2 focus:ring-yellow-400"
+                className="w-full px-2 py-1 text-xs bg-gray-800 border border-gray-700 text-white rounded focus:outline-none focus:ring-1 focus:ring-yellow-400"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-xs md:text-sm font-medium text-white mb-1 flex items-center">
-                <Phone className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" /> 
-                <span className="text-xs md:text-sm">Teléfono *</span>
+              <label className="block text-xs font-medium text-white mb-0.5 flex items-center">
+                <Phone className="h-3 w-3 mr-1" /> 
+                <span>Teléfono *</span>
               </label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className="w-full px-2 md:px-3 py-1.5 md:py-2 bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded focus:outline-none focus:ring-1 md:focus:ring-2 focus:ring-yellow-400"
+                className="w-full px-2 py-1 text-xs bg-gray-800 border border-gray-700 text-white rounded focus:outline-none focus:ring-1 focus:ring-yellow-400"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-xs md:text-sm font-medium text-white mb-1 flex items-center">
-                <MapPin className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" /> 
-                <span className="text-xs md:text-sm">Dirección de Envío *</span>
+              <label className="block text-xs font-medium text-white mb-0.5 flex items-center">
+                <MapPin className="h-3 w-3 mr-1" /> 
+                <span>Dirección *</span>
               </label>
               <textarea
                 name="address"
                 value={formData.address}
                 onChange={handleInputChange}
-                rows="2"
-                className="w-full px-2 md:px-3 py-1.5 md:py-2 bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded focus:outline-none focus:ring-1 md:focus:ring-2 focus:ring-yellow-400 resize-none"
+                rows="1"
+                className="w-full px-2 py-1 text-xs bg-gray-800 border border-gray-700 text-white rounded focus:outline-none focus:ring-1 focus:ring-yellow-400 resize-none"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-xs md:text-sm font-medium text-white mb-1 flex items-center">
-                <MessageSquare className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" /> 
-                <span className="text-xs md:text-sm">Notas Adicionales</span>
+              <label className="block text-xs font-medium text-white mb-0.5 flex items-center">
+                <MessageSquare className="h-3 w-3 mr-1" /> 
+                <span>Notas</span>
               </label>
               <textarea
                 name="notes"
                 value={formData.notes}
                 onChange={handleInputChange}
-                rows="2"
-                className="w-full px-2 md:px-3 py-1.5 md:py-2 bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded focus:outline-none focus:ring-1 md:focus:ring-2 focus:ring-yellow-400 resize-none"
+                rows="1"
+                className="w-full px-2 py-1 text-xs bg-gray-800 border border-gray-700 text-white rounded focus:outline-none focus:ring-1 focus:ring-yellow-400 resize-none"
                 placeholder="Ej: Llamar al timbre, referencias, etc."
               />
             </div>
 
-            <div className="pt-1 md:pt-2">
+            <div className="pt-1">
               <button
                 type="submit"
-                className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-3 md:px-4 rounded transition-colors duration-200 text-xs md:text-sm"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1.5 px-3 rounded transition-colors duration-200 text-xs"
               >
-                CONFIRMAR PEDIDO - ${getTotalPrice().toFixed(2)}
+                CONFIRMAR - ${getTotalPrice().toFixed(2)}
               </button>
             </div>
           </form>
         </div>
       ) : (
         <>
-          <div className="space-y-2 mb-3 md:mb-4 max-h-[40vh] md:max-h-64 overflow-y-auto pr-1">
+          <div className="space-y-1.5 mb-2 max-h-[45vh] overflow-y-auto pr-1">
             {items.length === 0 ? (
               <p className="text-white text-center py-4 text-sm">Tu carrito está vacío</p>
             ) : (
